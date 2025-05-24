@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WurstBus</title>
+  <link rel="icon" 
+        type="image/x-icon" 
+        href="assets/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- FullCalendar CSS/JS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <!-- Instafeed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/dist/instafeed.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="nav-left">
+      <a href="#about">About Us</a>
+      <a href="#instagram">Gallery</a>
+    </nav>
+    <div class="logo-container">
+      <a href="/">
+        <img src="assets/logo.png" alt="FoodTruck Logo" id="logo" />
+      </a>
+    </div>
+    <nav class="nav-right">
+      <a href="#calendar-section">Calendar</a>
+      <a href="#calendar-section">Reservation</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu fermentum ligula. Aliquam luctus, quam a mollis ultricies, ex risus tristique quam, eget lacinia massa ante nec libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam eget ligula risus. Morbi imperdiet risus nulla, eu congue lorem lacinia non. Ut fermentum elementum velit, vel accumsan tellus dignissim non. Etiam varius pretium mi convallis pulvinar. Praesent elementum, dui id blandit rutrum, ligula lacus varius nulla, in ultricies est mauris ac orci.
+
+      Curabitur euismod maximus ornare. Cras congue interdum elit, vel molestie ex tempor quis. Duis posuere arcu at mattis gravida. In euismod vitae tellus sit amet mollis. Vestibulum id tincidunt dui. Sed quis metus turpis. Phasellus condimentum urna in efficitur malesuada. Maecenas laoreet, quam non bibendum mollis, nunc nisi porta mi, nec blandit elit massa eget velit. Nulla vel scelerisque sem. </p>
+  </section>
+
+  <section id="instagram">
+    <h2>Gallery</h2>
+    <div class="insta-grid">
+      <div class="insta-item"><img src="assets/gallery/1.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/2.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/3.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/4.jpg" alt=""></div>
+      
+      <div class="insta-item"><img src="assets/gallery/5.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/6.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/5.jpg" alt=""></div>
+      <div class="insta-item"><img src="assets/gallery/6.jpg" alt=""></div>
+    </div>
+  </section>
+
+  <section id="calenda-section">
+    <h2>Booking & Contact</h2>
+    <div id="calendar-section">
+      <div class="calendar-contact-wrapper">
+        <!-- Calendar on the left -->
+        <div class="calendar-container">
+          <div id="calendar"></div>
+        </div>
+        <!-- Contact form on the right -->
+        <div class="contact-container">
+          <h3>Contact Us</h3>
+          <form id="contact-form" action="peter@5heizmann.ch" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+  
+  </section>
+
+
+  <footer>
+    <p>Made by <a href="https://sachaheizmann.com/" target="_blank" rel="noopener">Sacha</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

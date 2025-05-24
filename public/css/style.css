@@ -1,0 +1,263 @@
+body { font-family: sans-serif; margin:0; padding:0; }
+header { text-align:center; padding:2rem; background:#f8f8f8;}
+#logo { max-width:150px; }
+section { padding:2rem; }
+#calendar { max-width:600px; margin:0 auto; }
+/* #instafeed { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; } */
+/* #instafeed a img { width:120px; height:120px; object-fit:cover; border-radius:8px; } */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #f8f8f8;
+  }
+  
+  
+  .nav-left a,
+  .nav-right a {
+    margin: 0 0.75rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .nav-left a:hover,
+  .nav-right a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Center the logo */
+  .logo-container {
+    flex-shrink: 0;
+    text-align: center;
+  }
+  
+  #logo {
+    max-height: 160px;
+  }
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f0f0f0;
+    font-size: 0.9rem;
+}
+footer a {
+    color: inherit;
+    text-decoration: underline;
+}
+/* === Instagram-like horizontal scroll === */
+.insta-grid {
+
+  display: flex;
+  gap: 8px;
+  padding: 10px 8px;         /* padding so first/last aren’t flush to edge */
+  overflow-x: auto; 
+  overflow-y: visible;      /* enable horizontal scroll */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.insta-item {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  overflow: visible;     
+  position: relative;    /* ← allow overflow */
+}
+
+.insta-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform .2s;
+  transform-origin: center center;  /* ← scale from center */
+}
+
+.insta-item img:hover {
+  overflow: visible;
+  transform: scale(1.05);
+  transform-origin: center center;
+  z-index: 10;                 /* lift it above the others */
+  position: relative; 
+}
+
+
+
+/* hide scrollbar if you want a cleaner look (optional) */
+.insta-grid::-webkit-scrollbar {
+  display: none;
+}
+.insta-grid::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+.insta-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Contact Us Section */
+#contact {
+  padding: 2rem;
+  background: #fafafa;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+#contact-form button {
+  align-self: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: #333;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+#contact-form button:hover {
+  background: #555;
+}
+/* Calendar + Contact two-column layout */
+#calendar-section {
+  /* ensure the inner wrapper can flex */
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendar-contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7rem;
+  justify-content: center; /* center on small screens */
+  align-items: flex-start;
+}
+
+.calendar-container,
+.contact-container {
+  flex: 1 1 300px; /* grow/shrink, min 300px */
+  box-sizing: border-box;
+}
+
+/* Optional: give a max width to each column */
+.calendar-container {
+  max-width: 600px;
+}
+.contact-container {
+  max-width: 400px;
+}
+
+/* Style the contact-container title to match others */
+.contact-container h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Ensure the calendar div fills its container */
+.calendar-container #calendar {
+  width: 100%;
+}
+
+/* Adjust form spacing if needed */
+.contact-container .form-row {
+  margin-bottom: 1rem;
+}
+
+/* ===== Responsive adjustments ===== */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  /* Header → stack nav + logo vertically */
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-left,
+  .nav-right {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* Insta-grid items smaller on tablet */
+  .insta-item {
+    flex: 0 0 150px;
+  }
+}
+
+/* Phone and below */
+@media (max-width: 480px) {
+  /* Global section padding → a bit less on phones */
+  section {
+    padding: 1rem;
+  }
+
+  /* Calendar + Contact → stack vertically */
+  .calendar-contact-wrapper {
+    flex-direction: column;
+    gap: 2rem;             /* less gap when stacked */
+  }
+  .calendar-container,
+  .contact-container {
+    flex: 1 1 auto;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  /* Shrink calendar height to fit */
+  .calendar-container #calendar {
+    max-width: 100%;
+    font-size: 0.85rem;    /* FullCalendar will scale text */
+  }
+
+  /* Contact form full width */
+  .contact-container {
+    width: 100%;
+  }
+
+  /* Insta-grid on phones: two-column swipe grid */
+  .insta-grid {
+    gap: 6px;
+    padding: 6px;
+  }
+  .insta-item {
+    flex: 0 0 45%;         /* roughly two per row */
+  }
+
+  /* Footer links easier to tap */
+  footer {
+    font-size: 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+}
