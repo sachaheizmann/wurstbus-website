@@ -15,4 +15,4 @@ app.get('/events', (req, res) => {
 // Serve static files
 app.use(express.static('public'));
 
-app.listen(PORT, () => console.log("port 3000"));
+app.listen(PORT, () => console.log("port 3002"));
