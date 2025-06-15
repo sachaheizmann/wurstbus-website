@@ -261,3 +261,20 @@ footer a {
     padding: 1.5rem 0.5rem;
   }
 }
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure the form inside #contact can scroll if needed */
+#contact-form {
+  min-height: 100%;
+  overflow-y: auto;
+}
