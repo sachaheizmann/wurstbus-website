@@ -46,22 +46,7 @@ Venez partager un moment gourmand et convivial dans ce cadre chargé d’histoir
 
   <section id="instagram">
     <h2>Galerie</h2>
-    <div class="insta-grid">      
-      <div class="insta-item"><img src="assets/gallery/11.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/7.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/8.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/9.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/10.jpg" alt=""></div>
-
-      <div class="insta-item"><img src="assets/gallery/1.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/2.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/3.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/4.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/5.jpg" alt=""></div>
-      <div class="insta-item"><img src="assets/gallery/6.jpg" alt=""></div>
-    
-      
-    </div>
+    <div class="insta-grid" id="insta-feed"></div>
   </section>
 
   <section id="calenda-section">
@@ -106,5 +91,33 @@ Venez partager un moment gourmand et convivial dans ce cadre chargé d’histoir
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    const galleryPath = './assets/gallery/';
+    const feed = document.getElementById('insta-feed');
+  
+    let i = 1;
+  
+    function tryLoadImage(num) {
+      const img = new Image();
+      img.src = `${galleryPath}${num}.jpg`;
+  
+      img.onload = () => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'insta-item';
+        wrapper.appendChild(img);
+        feed.appendChild(wrapper);
+  
+        tryLoadImage(num + 1); // try next
+      };
+  
+      img.onerror = () => {
+        // Stop when there's no image with this number
+      };
+    }
+  
+    tryLoadImage(i);
+  </script>
+  
+  
 </body>
 </html>
