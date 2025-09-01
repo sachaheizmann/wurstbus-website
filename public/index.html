@@ -99,7 +99,7 @@ Venez partager un moment gourmand et convivial dans ce cadre chargé d’histoir
     const galleryPath = './assets/gallery/';
     const feed = document.getElementById('insta-feed');
   
-    let i = 1;
+    let i = 13; //keep uptodate
   
     function tryLoadImage(num) {
       const img = new Image();
@@ -111,7 +111,7 @@ Venez partager un moment gourmand et convivial dans ce cadre chargé d’histoir
         wrapper.appendChild(img);
         feed.appendChild(wrapper);
   
-        tryLoadImage(num + 1); // try next
+        tryLoadImage(num - 1); // try next
       };
   
       img.onerror = () => {
