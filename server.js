@@ -4,15 +4,15 @@ const PORT = process.env.PORT || 3002;
 
 // Hard‑coded reserved dates for demo
 const events = [
-  { title: 'Reserved', start: '2025-06-14' },
-  { title: 'Soirée privée', start: '2025-08-16' },
-  { title: 'Soirée privée', start: '2025-09-13' },
-  { title: 'Soirée privée', start: '2025-09-27' },
-  { title: 'Soirée privée', start: '2025-10-04' },
-  { title: 'Soirée privée', start: '2025-10-11' },
-  { title: 'Soirée privée', start: '2025-10-18' },
-  { title: 'Soirée privée', start: '2025-10-26' },
-  { title: 'Soirée privée', start: '2025-10-25' }
+  { title: 'Réservé', start: '2025-06-14' },
+  { title: 'Réservé', start: '2025-08-16' },
+  { title: 'Réservé', start: '2025-09-13' },
+  { title: 'Réservé', start: '2025-09-27' },
+  { title: 'Réservé', start: '2025-10-04' },
+  { title: 'Réservé', start: '2025-10-11' },
+  { title: 'Réservé', start: '2025-10-18' },
+  { title: 'Réservé', start: '2025-10-26' },
+  { title: 'Réservé', start: '2025-10-25' }
 ];
 
 app.get('/events', (req, res) => {
