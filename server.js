@@ -27,9 +27,9 @@ const events = [
   { title: 'L\'Isle', start: '2026-09-03' },
   { title: 'L\'Isle', start: '2026-09-04' },
   { title: 'L\'Isle', start: '2026-09-05' },
-  { title: 'British car meet.', start: '2026-10-03' },
-  { title: 'Brocante Morges', start: '2026-12-05' },
-  { title: 'Brocante Morges', start: '2026-12-06' },
+  { title: 'Brit car meet.', start: '2026-10-03' },
+  { title: 'Broc Morges', start: '2026-12-05' },
+  { title: 'Broc Morges', start: '2026-12-06' },
 
 ];
 
